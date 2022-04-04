@@ -63,7 +63,7 @@ namespace MetadataServerMockProject
 
             requestPost.RequestFormat = DataFormat.Json;
 
-            string json = @"{subjects: ['919e8a1922aaa764b1d66407c6f62244e77081215f385b60a62091494861707079436f696e', '919e8a1922aaa764b1d66407c6f62244e77081215f385b60a62091494861707079436f696e']}";
+            string json = @"{subjects: ['789ef8ae89617f34c07f7f6a12e4d65146f958c0bc15a97b4ff169f16861707079636f696e', '789ef8ae89617f34c07f7f6a12e4d65146f958c0bc15a97b4ff169f1']}";
 
             JObject jsonBody = JObject.Parse(json);
           
