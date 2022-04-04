@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
 
 namespace MetadataServerMockProject
 {
     public class MetadataServerMockRequestPOST
     {
-        public string subjects;
+        public ArrayList subjects;
     }
 }
