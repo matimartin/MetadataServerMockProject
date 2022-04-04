@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using RestSharp;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace MetadataServerMockProject
@@ -19,7 +20,7 @@ namespace MetadataServerMockProject
 
             var apiResponseAmazinCoing = JsonConvert.DeserializeObject<MetadataServerMockResponse>(responseAmazingCoin.Content);
 
-            //Get status code: 200 OK //Console.WriteLine(apiResponseAmazinCoing.url.signatures[0].signature);
+            //Get status code: 200 OK
             Assert.AreEqual(responseAmazingCoin.StatusCode, System.Net.HttpStatusCode.OK);
 
             // Get Properties
@@ -48,6 +49,27 @@ namespace MetadataServerMockProject
             Assert.IsTrue(apiResponseHappyCoin.name.value.Contains("HappyCoin"));
             Assert.IsTrue(apiResponseHappyCoin.url.signatures[0].publicKey.Contains("db2c42a7c5b70d7e635b95c5864439f22ccd6639cc7bc128a88a804f149a4448"));
             Assert.IsTrue(apiResponseHappyCoin.url.signatures[0].signature.Contains("f18ddccdbf34ed909f36ca753ceecb2f5a1958cf49212e83ffbe6630228dc6d9818c36cb345156efddd3af6383edd4755bd827a3dc90a70476ac15bf5bdd7f06"));
+        }
+
+        [TestMethod]
+        public async Task TestMethodPostAsync()
+        {
+            var client = new RestClient("http://metadata-server-mock.herokuapp.com/");
+
+            var requestPost = new RestRequest("metadata/query", Method.Post);
+
+            requestPost.RequestFormat = DataFormat.Json;
+
+            List<string> test = new List<string>(new string[] { "919e8a1922aaa764b1d66407c6f62244e77081215f385b60a62091494861707079436f696e",
+        "789ef8ae89617f34c07f7f6a12e4d65146f958c0bc15a97b4ff169f1" });
+
+            requestPost.AddJsonBody(new MetadataServerMockRequestPOST() { subjects = "919e8a1922aaa764b1d66407c6f62244e77081215f385b60a62091494861707079436f696e"});
+
+            var fullUrl = client.BuildUri(requestPost);
+
+            var responsePost = await client.ExecuteAsync(requestPost);
+
+            var apiResponsePost = JsonConvert.DeserializeObject<MetadataServerMockResponse>(responsePost.Content);
 
         }
     }

@@ -83,9 +83,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EndpointBase.cs" />
-    <Compile Include="Helper.cs" />
     <Compile Include="MetadataServerMock.cs" />
+    <Compile Include="MetadataServerMockRequestPOST.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
