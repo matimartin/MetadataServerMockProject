@@ -13,7 +13,7 @@ namespace MetadataServerMockProject
     {
         // GET
         [TestMethod]
-        public async Task TestMethodAmazingAsync()
+        public async Task TestMethodAmazing()
         {
             var client = new RestClient("http://metadata-server-mock.herokuapp.com/");
             
@@ -34,7 +34,7 @@ namespace MetadataServerMockProject
 
         // GET
         [TestMethod]
-        public async Task TestMethodHappyAsync()
+        public async Task TestMethodHappy()
         {
             var client = new RestClient("http://metadata-server-mock.herokuapp.com/");
 
@@ -55,7 +55,7 @@ namespace MetadataServerMockProject
 
         // POST
         [TestMethod]
-        public async Task TestMethodPostAsync()
+        public async Task TestMethodPost()
         {
             var client = new RestClient("http://metadata-server-mock.herokuapp.com/");
 
@@ -63,7 +63,7 @@ namespace MetadataServerMockProject
 
             requestPost.RequestFormat = DataFormat.Json;
 
-            string json = @"{subjects: ['919e8a1922aaa764b1d66407c6f62244e77081215f385b60a62091494861707079436f696e', '789ef8ae89617f34c07f7f6a12e4d65146f958c0bc15a97b4ff169f1']}";
+            string json = @"{subjects: ['919e8a1922aaa764b1d66407c6f62244e77081215f385b60a62091494861707079436f696e', '919e8a1922aaa764b1d66407c6f62244e77081215f385b60a62091494861707079436f696e']}";
 
             JObject jsonBody = JObject.Parse(json);
           
@@ -75,6 +75,8 @@ namespace MetadataServerMockProject
 
             // Get status code 200 ok
             Assert.AreEqual(responsePost.StatusCode, System.Net.HttpStatusCode.OK);
+
+            Assert.IsTrue(responsePost.Content.Contains("{\"subjects\":[]}"));
         }
     }
 }
