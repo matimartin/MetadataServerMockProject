@@ -4,6 +4,18 @@ namespace MetadataServerMockProject
 {
     // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
     // json2csharp.com/
+    public class MetadataServerMockResponse
+    {
+        public string subject;
+        public Url url;
+        public Name name;
+        public Ticker tiker;
+        public Decimals decimals;
+        public Logo logo;
+        public Description description;
+        public Root root;
+    }
+    
     public class Signature
     {
         public string signature { get; set; }
