@@ -15,7 +15,7 @@ namespace MetadataServerMockProject
         public Description description;
         public Root root;
     }
-    
+
     public class Signature
     {
         public string signature { get; set; }
@@ -75,4 +75,5 @@ namespace MetadataServerMockProject
         public Logo logo { get; set; }
         public Description description { get; set; }
     }
+
 }

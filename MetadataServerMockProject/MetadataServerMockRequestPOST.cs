@@ -2,8 +2,8 @@
 
 namespace MetadataServerMockProject
 {
-    public class MetadataServerMockRequestPOST
-    {
-        public ArrayList subjects;
-    }
+    //public class MetadataServerMockRequestPOST
+    //{
+    //    public ArrayList subjects;
+    //}
 }
