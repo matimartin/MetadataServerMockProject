@@ -2,7 +2,7 @@
 
 namespace MetadataServerMockProject
 {
-    public class Helper
+    public static class Helper
     {
         // Get the array list of the json file for the subjects element in the body of the POST to then deserialized
         public class JsonBodyList
