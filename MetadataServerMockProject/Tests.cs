@@ -94,7 +94,7 @@ namespace MetadataServerMockProject
 
         // POST
         [TestMethod]
-        [Description("Post Query (1st Curl)")]
+        [Description("Post Query (2nd Curl)")]
         public async Task TestMethodPostCurl2()
         {
             var client = new RestClient("http://metadata-server-mock.herokuapp.com/");
