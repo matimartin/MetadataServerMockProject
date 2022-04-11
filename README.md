@@ -1,6 +1,6 @@
 # MetadataServerMockProject
 
-[![.NET](https://github.com/matimartin/MetadataServerMockProject/actions/workflows/main.yml/badge.svg)](https://github.com/matimartin/MetadataServerMockProject/actions/workflows/main.yml)
+[![CI](https://github.com/matimartin/MetadataServerMockProject/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/matimartin/MetadataServerMockProject/actions/workflows/main.yml)
 
 Main page -> go to: https://github.com/piotr-iohk/metadata-server-mock#readme
 
